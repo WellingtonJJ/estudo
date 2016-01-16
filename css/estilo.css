@@ -1,8 +1,17 @@
 body {
 	font-family: 'Roboto', sans-serif;
-
+	color: #333;
 }
-
+a:link, a:active, a:visited{
+	color:#315e8a;
+	text-decoration: none; /*Tira o sublinhado dos links*/
+}
+a:hover{ /*o a:hover aplica um efeito em todos os links*/
+	text-decoration: underline; 
+}
+menu a{
+	background: #DCDCDC;
+}
 /* 
 grid 960px 
 . é para class, # é para id
@@ -12,7 +21,7 @@ padding é o espaço da div em relação a margem fora dela
 float alinha a coluna
 */
 .linha {
-	width: 960pc;
+	width: 960px; /*largura*/
 	margin: 0 auto;
 	overflow: auto;
 	padding: 5px 0;
@@ -56,4 +65,120 @@ float alinha a coluna
 }
 .col12{
 	width: 940px;
+}
+/*Abaixo tem Estilos reutilizáveis*/
+.sem-padding{
+	padding: 0 !important; /*O !important obrigado que o padding seja o escolhido aqui*/
+}
+.sem-margin{
+	margin: 0 !important;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: 500;
+	margin: 15px 0 10px 0; /*margem de cima, direita, embaixo, esquerda*/
+}
+ul li, ol li{
+	margin-bottom: 5px;
+}
+ul.inline li, ol.inline li{
+	display: inline; /*esse code deixa as listas um do lado do outro*/
+	margin-right: 15px; /*Aumentar o espaço no lado direito dos itens da lista*/
+}
+ul.inline li:last-child, ol.inline li:last-child{ /*last child significa que só o último da lista.inline vai receber as config abaixo*/
+	margin-right: 0px; /*Aumentar o espaço no lado direito dos itens da lista*/
+}
+ul.sem-marcador, ol.sem-marcador{
+	list-style: none; /*Tira o marcador do lado da lista*/
+}
+a.botao, input.botao{
+	background: #1f3c58;
+	padding: 5px 10px;
+	border-radius: 3px; /*arredonda borda*/
+	color: #ebebeb;
+	cursor: pointer; /*muda o formato do cursor, quando colocado em cima*/
+	margin: 5px 0;
+	display: inline-block; /*fazer o botão ficar como bloco*/
+	border: none;
+}
+a.botao:hover, input.botao:hover{
+	background: #315a8a;
+	text-decoration: none;
+}
+img{
+	max-width: 100%; /*Esses codes fizeram as imagens ficar encaixada no layout*/
+	height: auto;
+}
+/*Layout do site*/
+.header{
+	background: #000000;
+}
+h1.logo{
+	font-weight: 300; /*fonte da google fontes*/
+	color: #DCDCDC;
+	letter-spacing: -2px; /*Espaçamento dos caracteres*/
+}
+.conteudo-extra{
+	background: #f1f2ea;
+}
+.footer{
+	background: #000000;
+	color: #ebebeb;
+	padding: 20px 0;
+	text-align: center;
+	font-weight: 100;
+}
+.menu{
+	text-transform: uppercase; /*todas letras em maiúsculas*/
+	text-align: right;
+	margin-top: 25px;
+}
+.menu li a{
+	padding: 5px;
+	border-radius: 3px; /*Deixa a borda arredondada*/
+	color: #DCDCDC;
+}
+.menu li a:hover{
+	text-decoration: none;
+	background: #1f3c58;
+	color: #ebebeb;
+}
+ul.noticias li{
+	clear: both; /*limpa a flutuação(?)*/
+	display: block; /*A declaração display: block faz com que o elemento HTML seja renderizado como bloco, tal como os parágrafos e os cabeçalhos o são. Um bloco contém um espaço em branco tanto em cima como embaixo e não permite outros elementos HTML ao lado, exceto quando tiver sido declarado ao contrário (por exemplo, declarar a propriedade float para o elemento próximo ao bloco).*/
+	overflow: hidden; /*oculta o conteúdo excedente*/
+	margin-bottom: 20px; /*margem na parte debaixo de cada li*/
+}
+ul.noticias li img{
+	width: 70px; /*largura*/
+	height: auto; /*altura*/
+	margin-right: 10px;
+	float: left; /*flutuar pro lado esquerdo*/
+}
+ul.noticias li h4{
+	margin: -2px 0 5px 0;
+	font-weight: 500px;
+}
+ul.noticias li p{
+	margin: 5px 0;
+	font-weight: 300;
+}
+ul.noticias li p a{
+	font-weight: 500;
+}
+.contato label{
+	display: block;
+	font-size: 13px;
+	font-weight: 300;
+}
+.contato input, .contato textarea{
+	display: block;
+	margin-bottom: 15px;
+	padding: 5px 2%; /*colocou % nas laterais e na largura para evitar problemas caso a coluna do grid fique muito estreita*/
+	width: 96%;
+}
+.contato textarea{
+	height: 150px;
+}
+.contato input.botao{
+	width: auto;
 }
